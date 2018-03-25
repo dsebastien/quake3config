@@ -1,0 +1,217 @@
+======================================================
+[PlAyZoNe] Quake III Arena Config v5.0
+Auteur: [PlAyZoNe]
+Dernière mise à jour: 10/06/01
+======================================================
+
+-------------------
+Table des Matières
+-------------------
+1.   introduction
+2.   structure des fichiers
+3.   autoexec.cfg              (baseq3)
+4.   q3config.cfg              (baseq3)
+5.   binds.cfg                 (baseq3/playzone)
+6.   player.cfg                (baseq3/playzone)
+7.   settings.cfg              (baseq3/playzone)
+8.   demo.cfg                  (baseq3/playzone/scripts)
+9.   divers.cfg                (baseq3/playzone/scripts)
+10.  mapselect.cfg             (baseq3/playzone/scripts)
+11.  parler.cfg                (baseq3/playzone/scripts)
+12.  timing.cfg                (baseq3/playzone/scripts)
+13.  rail.cfg                  (baseq3/playzone/scripts)
+14.  volume.cfg                (baseq3/playzone/scripts)
+15.  zoom.cfg                  (baseq3/playzone/scripts)
+16.  copyright
+17.  conclusion
+
+*.   playzone.pk3              (bonus)
+**.  noms en nouleur           (bonus)
+***. BUGS CONNUS               (important)
+
+================
+1. introduction
+================
+Le but de ce fichier est principalement d'expliquer comment est formée ma config et en quoi consistent (et comment utiliser) les scripts qu'elle contient.
+C'est une config assez spéciale étant donné qu'elle se base surtout sur l'utilisation du gamepad (microsoft sidewinder pour ne pas le citer) et de la souris.
+Le clavier quant à lui est utilisé pour toutes les tâches secondaires (parler, messages à l'équipe, lancement de démos...).
+J'ai mis au point ce style de config depuis longtemps et je dois dire que je n'ai jamais été déçu, beaucoup plus instinctif et facile pour se déplacer (prise en main bien plus rapide qu'au clavier). 
+Celui qui utilisera ma config est libre  de la modifier à sa convenance, toutefois je refuse qu'elle soit modifiée puis distribuée sous un autre nom d'auteur.
+
+!!! AVANT D'INSTALLER LA CONFIG, PENSEZ A SAUVEGARDER LA VOTRE DANS UN DOSSIER SEPARE !!!
+
+
+==========================
+2. structure des fichiers
+==========================
+La structure que j'utilise dans mes fichiers est la même que celle que j'ai développée pour Counter-Strike.
+Je préfère avoir un autoexec.cfg qui lance les .cfg présents dans un sous-dossier que tous les fichiers au même endroit.
+
+===> baseq3                     (autoexec)
+            - playzone          (binds, player config, settings)
+                      -scripts  (scripts)
+
+
+=========================
+3. autoexec.cfg (baseq3)
+=========================
+Le fichier autoexec qui se trouve dans mon dossier baseq3 est le fichier qui sert à lancer tous les autres fichiers .cfg.
+Il contient les commandes nécessaires à l'éxécution de toutes les parties de la config.
+La derniere ligne (//EOF) est nécessaire étant donné que dans un fichier .cfg, la dernière ligne n'est pas prise en compte.
+
+
+=========================
+4. q3config.cfg (baseq3)
+=========================
+Fichier créé automatiquement par Quake.
+Contient simplement une copie de tous les paramètres.
+Utile car au premier lancement de la config si ce fichier n'est pas présent, quake le crée, mais tous les paramètres ne sont pas repris.
+En mettant de ce fichier une copie de tous les paramètres, je suis certain que ma config fonctionne totalement dès le premier lancement.
+
+===============================
+5. binds.cfg (baseq3/playzone)
+===============================
+Fichier contenant la configuration de toutes les touches.
+C'est le fichier que vous devrez modifier si vous désirez changer les contrôles.
+
+
+================================
+6. player.cfg (baseq3/playzone)
+================================
+C'est ici que se trouve la configuration de mon perso.
+- Le nom de mon perso (voir **)
+- Le model utilisé par mon perso
+- Le nom par défaut des équipes
+
+
+==================================
+7. settings.cfg (baseq3/playzone)
+==================================
+Tous les paramètres important s'y trouvent.
+En plusieures sections: * railgun    (largeur du rayon, temps d'affichage, couleur...)
+                        * paramètres (paramètres importants liés à l'affichage en cours de jeu...)
+                        * mouse      (sensibilité, accélération des mouvements...)
+                        * graphic    (gerbes de sang, lumières dynamiques, ombres...)
+                        * server     (limite de frags, warmup, maximum de connections, limite de temps...)
+                        * divers     (paramètres moins importants mais qui doivent rester dans le settings.cfg)
+
+
+======================================
+8. demo.cfg (baseq3/playzone/scripts)
+======================================
+Demo Record Script: Script qui permet en utilisant les touches de F9 à F12 d'enregistrer plusieures démos à la suite
+Demo Play   Script: Script permettant de contrôler une démo -> mode pause, ralenti, accéléré, très rapide (touches clavier numérique)
+
+
+========================================
+9. divers.cfg (baseq3/playzone/scripts)
+========================================
+Scripts divers: * Switch teams Script: Script qui effectue un changement d'équipe (bleu, rouge, spectateur) 
+                * Switch names Script: Script qui change le nom du joueur (changez les noms comme vous voulez)
+                * Close Combat Script: Script qui fait passer au Gauntlet et qui attaque directement, autant dire qu'au corps à corps, c'est plutôt utile! :)
+                * Rl-Rg Script       : Script qui Switche (passer à l'autre) entre le Lance Rockettes et le RailGun
+                * Rocket Jump Script : Script qui effectue un Rocket Jump (regarde le sol, saute, tire et redresse la vue)
+
+
+============================================
+10. mapselect.cfg (baseq3/playzone/scripts)
+============================================
+Script qui permet au moyen des touches du clavier de sélectionner une map (DM ou CTF) et de la lancer.
+
+
+========================================
+11. parler.cfg (baseq3/playzone/scripts)
+========================================
+Les deux premiers scripts permettent d'envoyer un message à un ATTAQUANT ou à une CIBLE (F5 -> ATTAQUANT ; F6 -> CIBLE).
+Le troisième script permet d'envoyer avec un seul bouton une suite de messages (vous pouvez les modifier).
+
+
+=======================================
+12. timing.cfg (baseq3/playzone/scripts)
+=======================================
+Script qui me permet à chaque début de map de savoir si il y a des power-up spéciaux sur la map, et si oui, leur temps de respawn (réapparition)
+
+
+=======================================
+13. rail.cfg (baseq3/playzone/scripts)
+=======================================
+Plusieurs Script en rapport avec le RailGun:
+- Railgun Rainbow Script: En appuyant sur CTRL, ce script fait passer au RailGun et change la couleur du rayon
+- Railgun Select Script : Sélectionne rapidement le RailGun et envoie ce message: "Let's Snipe... heh heh" 
+
+
+=========================================
+14. volume.cfg (baseq3/playzone/scripts)
+=========================================
+Script utilisé pour modifier le volume en cours de partie (huh huh)
+
+
+=======================================
+15. zoom.cfg (baseq3/playzone/scripts)
+=======================================
+Script permettant une fois activé de régler le niveau de zoom avec la molette de la souris.
+De manière plus détaillée: en appuyant une première fois sur JOY10, le script effectue un zoom, réduit la sensibilité de la souris à 7, change de viseur, change la taille du viseur et enfin, le script change la couleur du rayon du railgun :).
+Une seconde pression sur JOY10 et le script stoppe le zoom, remet le viseur normal, la taille du viseur revient à la normale, la sensibilité est remise à 12, et le niveau de zoom est réinitialisé.
+
+
+==============
+16. copyright
+==============
+Point que j'ai failli oublier et pourtant très important.
+Je tient à vous informer qu'une grande partie des scripts présent dans ma config ne sont pas à moi.
+Ils sont en libre utilisation, mais je trouve important de bien expliquer que je ne m'approprie pas ces scripts, je ne fais que les utiliser.
+Voici le nom des auteurs des scripts: DeOs - Artificer - indian18's - Essobie.
+Je pense avoir cité tout le monde, malgré tout, si j'ai fait un oubli, n'hésitez pas à me le faire savoir (playzone999@belgacom.net)
+
+
+===============
+17. conclusion
+===============
+Je pense avoir dit le principal au sujet de ma config...
+A l'heure où vous lirez ces lignes, une autre version de ma config sera certainement terminée, en effet je travaille continuellement dessus (j'aime la "perfection").
+Si vous désirez d'autres informations sur ma config, vous pouvez me contacter: * par mail -> playzone999@belgacom.net
+                                                                               * par icq  -> 20194326
+Bon amusement à tous et... LET'S FRAG!  ;)
+
+=========================
+**. playzone.pk3 (baseq3)
+=========================
+Fichier PK3 contenant un nouveau fond pour le menu principal, le skin que j'utilise, un nouvo rayon pour le railgun, de nouveaux viseurs, le plasmagun rouge, un nouveau theme musical pour le menu principal, et bien d'autres joyeusetés :)
+
+====================
+**. noms en nouleur
+====================
+Voilà quelques infos gratuites sur les noms en couleur. Vous remarquerez certainement que mon Pseudo est écrit de manière spéciale dans ma config.
+
+"^2)^7[PlAyZoNe]^2("
+
+Comme vous le voyez, chaque caractère est précédé de ^ et d'un chiffre.
+C'est ce code qui indique au jeu la couleur a donner à la lettre qui suit.
+Voici un tableau donnant les différentes couleurs possibles:
+
+===================
+= Code  |  Couleur
+=       |
+=  ^0   |  Black       (Seulement dans les messages Ne marche pas dans les noms!)
+=  ^1   |  Rouge
+=  ^2   |  Vert
+=  ^3   |  Jaune
+=  ^4   |  Bleu
+=  ^5   |  Cyan
+=  ^6   |  Magenta
+=  ^7   |  Blanc
+===================
+
+Exemple, votre pseudo est:  George   (mdr)
+Eh bien si vous voulez avoir le pseudo tout en rouge, vous devrez écrire:   ^1George
+Autre exemple, si vous voulez que chaque lettre aie une couleur différente: ^1G^2e^3o^4r^5g^6e
+Une fois votre pseudo coloré terminé, vous devrez le mettre dans le fichier player.cfg (remplacer le mien)
+
+Il existe également des programmes qui vous aideront à réaliser vos noms en couleurs:
+FunNames Editor (http://digitalys.pagina.de/)
+
+===========+=========
+***. BUGS CONNUS.pk3
+=====================
+Il existe actuellement un seul bug avec ma config.
+Pour modifier les menus du jeu, j'ai simplement utilise le fichier ui.qvm de CPMA(challenge pro mode arena), celui-ci permet de voir plus de maps sur chaque page, une meilleure efficacité... Malheureusement il provoque aussi un bug pendant le jeu. Etant donné que CPMA intègre une option supplémentaire dans le menu des options (en cours de jeu), celà provoque le plantage du jeu puisque les fichiers nécessaire à cette option ne sont pas présents. Donc, la seule chose à ne pas faire avec ma config est d'aller dans le menu est options pendant le jeu, ça provoque l'arret complet du jeu. Mais cette erreur n'est pas importante, d'autres touches permettent de quitter le jeu, pour ce qui est d'ajouter des bots... Le menu  ainsi remanié est bien plus pratique, c'est donc un petit inconvénient. :)
